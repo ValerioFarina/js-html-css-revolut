@@ -14,5 +14,17 @@ $(document).ready(function() {
         $(this).children('.dropdown-menu').addClass('hidden');
     });
 
+    // intercetto il click dell'icona dell'hamburger menu
+    $('#hamburger-icon a').click(function() {
+        // seleziono l'hamburger-menu e gli tolgo la classe "hidden"
+        $('#hamburger-menu').removeClass('hidden');
+    });
+
+    // intercetto il click dell'icona "x" dentro l'hamburger menu
+    $('#close-icon a').click(function() {
+        // seleziono l'hamburger-menu e gli aggiungo la classe "hidden"
+        $('#hamburger-menu').addClass('hidden');
+    });
+
 // fine document.ready
 });
