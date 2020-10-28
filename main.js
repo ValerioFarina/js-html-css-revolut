@@ -26,5 +26,15 @@ $(document).ready(function() {
         $('#hamburger-menu').addClass('hidden');
     });
 
+    // intercetto il click delle voci dell'hamburger menu
+    $('#main-hamburger-menu > ul > li > a').click(function() {
+        // selezione ogni dropdown-menu all'interno dell'hamburger-menu, tranne il dropdown-menu che è fratello della voce corrente (cioè, della voce che ho cliccato)
+        // aggiungo a tutti questi dropdown-menu selezionati la classe "hidden"
+        $('#main-hamburger-menu > ul > li > a').not($(this)).next('.dropdown-menu').addClass('hidden');
+        // seleziono il dropdown-menu che è fratello della voce corrente (cioè, della voce che ho cliccato)
+        // tolgo a questo dropdown-menu la classe "hidden"
+        $(this).next('.dropdown-menu').toggleClass('hidden');
+    });
+
 // fine document.ready
 });
